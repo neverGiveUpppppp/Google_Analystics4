@@ -1,0 +1,9 @@
+
+google:
+  oauth:
+    accessToken: "ya29.a0Ad52NEaX-VtqSesutZZa-TpyOY7jEeU8-S1mkKZJmuUEmCI84NsSM-6ZlQVi9CpaeFGc-CsO1t-mYyP286_laCgYKATMS=MiYN40vNekEikpmSUTT5_eAQ0171"
+    clientId: "722057699-t3feak2ljk0oufu90thhij.apps.googleusercontent.com"
+    clientSecret : "GOCX-REG-7u1GC36mSJ78AGPV"
+    refreshTokenUrl: "https://oauth2.googleapis.com/token"
+    refreshToken: "1//0eAZkm6KadG2ACgYwF-L9IrGqwYOPD5H7VLHzFlCG6srgk_CCZyJxzLnRB7rB-uMQlko"
+    analyticsUrl: "https://analyticsdata.googleapis.com/v1beta/properties/425548737:runReport"
