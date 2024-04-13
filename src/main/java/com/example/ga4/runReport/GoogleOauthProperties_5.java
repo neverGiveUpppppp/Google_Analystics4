@@ -1,4 +1,4 @@
-package com.example.ga4.restTemplate.product_spring3.config;
+package com.example.ga4.runReport;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,7 +1,7 @@
 package com.example.ga4.restTemplate.product_spring3.impl;
 
 import com.example.ga4.restTemplate.product_spring3.GoogleAnalysticsService;
-import com.example.ga4.restTemplate.product_spring3.config.GoogleOauthProperties;
+import com.example.ga4.restTemplate.product_spring3.config.GoogleOauthProperties_1;
 import com.example.ga4.restTemplate.product_spring3.domain.GoogleAnalysticsVO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -10,6 +10,7 @@ import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
@@ -25,17 +26,27 @@ import java.util.Map;
 
 
 @Service
-@RequiredArgsConstructor
-public class GoogleAnalysticsServiceImpl implements GoogleAnalysticsService {
+//@RequiredArgsConstructor
+public class GoogleAnalysticsServiceImpl_1 implements GoogleAnalysticsService {
 
     private final RestTemplate restTemplate;
-    private final GoogleOauthProperties oauthProps;
+    private final GoogleOauthProperties_1 oauthProps;
     private final Gson gson;
+    @Qualifier("ehCacheManager")
     private final CacheManager cacheManager;
+
+    public GoogleAnalysticsServiceImpl_1(RestTemplate restTemplate, GoogleOauthProperties_1 oauthProps, Gson gson, @Qualifier("ehCacheManager") CacheManager cacheManager) {
+        this.restTemplate = restTemplate;
+        this.oauthProps = oauthProps;
+        this.gson = gson;
+        this.cacheManager = cacheManager;
+    }
 
     private static final Type RESPONSE_TYPE = new TypeToken<Map<String, Object>>(){}.getType();
     private static final DecimalFormat formatter = new DecimalFormat();
-    final Logger logger = LoggerFactory.getLogger(GoogleAnalysticsServiceImpl.class);
+    final Logger logger = LoggerFactory.getLogger(GoogleAnalysticsServiceImpl_1.class);
+
+
 
     /**
      * 방문자수 호출

@@ -6,12 +6,14 @@ import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GACacheConfig {
 
+    @Qualifier("ehCacheManager")
     @Bean
     public CacheManager ehCacheManager() {
         CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder()
