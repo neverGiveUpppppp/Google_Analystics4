@@ -1,4 +1,4 @@
-package com.example.ga4.restTemplate.product_spring3.config;
+package com.example.ga4.restTemplate.spring5.config;
 
 
 import org.ehcache.CacheManager;
@@ -10,12 +10,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration("GACacheConfig1")
-public class GACacheConfig {
+@Configuration("GoogleAnalyticsCacheConfig2")
+public class GoogleAnalyticsCacheConfig {
 
-    @Qualifier("ehCacheManager")
+    @Qualifier("ehCacheManager2")
     @Bean
-    public CacheManager ehCacheManager() {
+    public CacheManager ehCacheManager2() {
         CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder()
                 .withCache("visitorCounts",     // "visitorCounts" 키명으로 캐시 생성
                         CacheConfigurationBuilder.newCacheConfigurationBuilder(

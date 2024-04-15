@@ -1,11 +1,10 @@
 package com.example.ga4.restTemplate.product_spring3.impl;
 
 import com.example.ga4.restTemplate.product_spring3.GoogleAnalysticsService;
-import com.example.ga4.restTemplate.product_spring3.config.GoogleOauthProperties_1;
+import com.example.ga4.restTemplate.product_spring3.config.GoogleOauthProperties;
 import com.example.ga4.restTemplate.product_spring3.domain.GoogleAnalysticsVO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import lombok.RequiredArgsConstructor;
 import org.ehcache.Cache;
 import org.ehcache.CacheManager;
 import org.slf4j.Logger;
@@ -25,17 +24,17 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service
+@Service("GoogleAnalysticsServiceImpl1")
 //@RequiredArgsConstructor
-public class GoogleAnalysticsServiceImpl_1 implements GoogleAnalysticsService {
+public class GoogleAnalysticsServiceImpl implements GoogleAnalysticsService {
 
     private final RestTemplate restTemplate;
-    private final GoogleOauthProperties_1 oauthProps;
+    private final GoogleOauthProperties oauthProps;
     private final Gson gson;
     @Qualifier("ehCacheManager")
     private final CacheManager cacheManager;
 
-    public GoogleAnalysticsServiceImpl_1(RestTemplate restTemplate, GoogleOauthProperties_1 oauthProps, Gson gson, @Qualifier("ehCacheManager") CacheManager cacheManager) {
+    public GoogleAnalysticsServiceImpl(RestTemplate restTemplate, GoogleOauthProperties oauthProps, Gson gson, @Qualifier("ehCacheManager") CacheManager cacheManager) {
         this.restTemplate = restTemplate;
         this.oauthProps = oauthProps;
         this.gson = gson;
@@ -44,7 +43,7 @@ public class GoogleAnalysticsServiceImpl_1 implements GoogleAnalysticsService {
 
     private static final Type RESPONSE_TYPE = new TypeToken<Map<String, Object>>(){}.getType();
     private static final DecimalFormat formatter = new DecimalFormat();
-    final Logger logger = LoggerFactory.getLogger(GoogleAnalysticsServiceImpl_1.class);
+    final Logger logger = LoggerFactory.getLogger(GoogleAnalysticsServiceImpl.class);
 
 
 

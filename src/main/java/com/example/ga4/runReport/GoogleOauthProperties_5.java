@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "google.oauth")
 @Getter
 @Setter
-public class GoogleOauthProperties {
+public class GoogleOauthProperties_5 {
 
     private String accessToken;
     private String analyticsUrl;

@@ -1,0 +1,41 @@
+
+<div th:fragment="b-content">
+    <h2>This is part of B Page</h2>
+    <p>This content comes from b.html</p>
+</div>
+
+<div th:fragment="c-content">
+    <p>C test</p>
+</div>
+
+<div th:fragment="visitorAjax">
+    <div>
+        <script th:inline="javascript">
+            $(document).ready(function() {
+                $.ajax({
+                    url: "/oauth2/ga4",
+                    // url: '/protoType/oauth2',
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json",
+                    // data: {
+                    //   "accessToken" : accessToken
+                    // },
+                    data: accessToken,
+                    success: function(data) {
+                        console.log(data);
+/*
+                        $('#todayVisitors').text(data.todayVisitors);
+                        $('#allVisitors').text(data.allVisitors);*/
+                    },
+                    error: function(xhr, status, error) {
+                        console.log('Error:', error);
+                    }
+                });
+            });
+        </script>
+    </div>
+    <h1>방문자 수</h1>
+    <div>오늘 방문자 수: <span id="todayVisitors"></span></div>
+    <div>전체 방문자 수: <span id="allVisitors"></span></div>
+</div>

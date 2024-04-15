@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h1>helloAjax</h1>
+<p th:text="'오늘 방문자수 : '  + ${visitors}" >오늘</p>
+<!--<p th:text="'오늘 방문자수 : '  + ${ga4Vo.todayVisitors}" >오늘</p>
+<p th:text="'오늘 방문자수 : '  + ${ga4Vo.allVisitors}" >오늘</p>-->
+<br>
+
+<h2>-----------------------</h2>
+<div th:replace="/visitorCnt :: visitorAjax"></div>
+
+
+
+</body>
+</html>

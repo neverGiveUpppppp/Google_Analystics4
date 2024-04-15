@@ -1,8 +1,7 @@
 package com.example.ga4.restTemplate.product_spring3;
 
-import com.example.ga4.restTemplate.product_spring3.config.GoogleOauthProperties_1;
+import com.example.ga4.restTemplate.product_spring3.config.GoogleOauthProperties;
 import com.example.ga4.restTemplate.product_spring3.domain.GoogleAnalysticsVO;
-import com.example.ga4.runReport.GoogleOauthProperties_5;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class GoogleAnalysticsController /*extends UserController*/{
 
     private GoogleAnalysticsService gaService;
-    private final GoogleOauthProperties_1 oauthProps;
+    private final GoogleOauthProperties oauthProps;
 
-    public GoogleAnalysticsController(GoogleAnalysticsService gaService, GoogleOauthProperties_1 oauthProps) {
+    public GoogleAnalysticsController(GoogleAnalysticsService gaService, GoogleOauthProperties oauthProps) {
         this.gaService = gaService;
         this.oauthProps = oauthProps;
     }

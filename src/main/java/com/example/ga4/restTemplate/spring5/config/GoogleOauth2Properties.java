@@ -1,4 +1,4 @@
-package com.example.ga4.restTemplate.product_spring3.config;
+package com.example.ga4.restTemplate.spring5.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
-@Component
+@Component("GoogleOauth2Properties2")
 @Getter
 @Setter
-public class GoogleOauthProperties_1 {
+public class GoogleOauth2Properties {
 
     @Value("${google.oauth.accessToken")
     private String accessToken;
