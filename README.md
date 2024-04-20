@@ -1,14 +1,17 @@
 # Google_Analystics4
-크게 두가지 형태로 만들었습니다.
-1.RestTemplate API    
-2.RunReport API    
+크게 두가지 형태로 만들었습니다.     
 
+&nbsp;&nbsp;&nbsp;&nbsp; 1.RestTemplate API    
+&nbsp;&nbsp;&nbsp;&nbsp; 2.RunReport API   
+<br>
 
 ## 1.RestTemplate + Google Oauth2.0
 자바에서 외부 API와 통신할 수 있게 하는 API인 RestTemplate과 Google Oauth2.0으로 인증한 방법
 
 ## 2.RunReport + service account
 구글 공홈 가이드의 추천으로 RunReport API와 service account 인증방식으로 만든 방법
+<br>    
+
 
 #### *service account방식
 OS의 환경변수에 구글에서 제공한 인증키인 json파일을 GOOGLE_APPLICATION_CREDENTIALS 이름에 등록하면
