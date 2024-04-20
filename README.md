@@ -14,7 +14,7 @@
 
 
 #### *service account방식
-OS의 환경변수에 구글에서 제공한 인증키인 json파일을 GOOGLE_APPLICATION_CREDENTIALS 이름에 등록하면
+OS의 환경변수에 구글에서 제공한 인증키인 json파일을 GOOGLE_APPLICATION_CREDENTIALS 이름에 등록하면    
 자동으로 해당 환경변수를 찾아 인증되는 방식
 
 
