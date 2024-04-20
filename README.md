@@ -20,7 +20,7 @@ OS의 환경변수에 구글에서 제공한 인증키인 json파일을 GOOGLE_A
 
 <br>
 
-### ※ yml에서 각종 정보를 가져오기 위해 @Value, @ConfigurationProperties을 사용했습니다.     
+### ※ yml에서 각종 정보를 가져오기 위해 @Value, @ConfigurationProperties 사용     
 
 #### @Value
 개별 속성 값을 나눠 주입     
