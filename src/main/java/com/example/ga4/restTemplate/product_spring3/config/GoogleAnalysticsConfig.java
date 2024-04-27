@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration("GoogleAnalysticsConfig1")
 public class GoogleAnalysticsConfig {
 
-    @Bean
+    @Bean("restTemplate1")
     public RestTemplate restTemplate(){
         return new RestTemplate(clientHttpRequestFactory());
     }
@@ -18,12 +18,12 @@ public class GoogleAnalysticsConfig {
     @Bean
     public ClientHttpRequestFactory clientHttpRequestFactory() { // ClientHttpRequestFactory : spring3
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-//        factory.setConnectTimeout(10*1000); // 10초 설정 : milliseconds단위
+        factory.setConnectTimeout(10*1000); // 10초 설정 : milliseconds단위
 //        factory.setReadTimeout(10*1000);
         return factory;
     }
 
-    @Bean
+    @Bean("gson1")
     public Gson gson() {
         return new Gson();
     }

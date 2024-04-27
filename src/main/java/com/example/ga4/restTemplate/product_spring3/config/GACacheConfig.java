@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class GACacheConfig {
 
     @Qualifier("ehCacheManager")
-    @Bean
+    @Bean("CacheManager1")
     public CacheManager ehCacheManager() {
         CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder()
                 .withCache("visitorCounts",     // "visitorCounts" 키명으로 캐시 생성

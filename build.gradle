@@ -31,6 +31,8 @@ dependencies {
 	implementation 'com.google.analytics:google-analytics-data:0.45.0'
 	implementation group: 'org.ehcache', name: 'ehcache', version: '3.8.1'
 	implementation group: 'org.webjars', name: 'jquery', version: '3.7.1'
+	implementation 'org.apache.httpcomponents:httpclient:5.3.1'
+
 
 }
 

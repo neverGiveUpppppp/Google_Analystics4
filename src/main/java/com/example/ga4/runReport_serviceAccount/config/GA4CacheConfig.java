@@ -5,13 +5,15 @@ import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration("GA4CacheConfig3")
 public class GA4CacheConfig {
 
-    @Bean("ehCacheManager3")
+    @Qualifier("ehCacheManager3")
+    @Bean("CacheManager3")
     public CacheManager ehCacheManager() {
         CacheManager cacheManager = (CacheManager) CacheManagerBuilder.newCacheManagerBuilder()
                 .withCache("visitorCounts",     // "visitorCounts" 키명으로 캐시 생성

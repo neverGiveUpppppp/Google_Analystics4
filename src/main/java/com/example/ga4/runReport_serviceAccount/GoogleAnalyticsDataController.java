@@ -15,10 +15,11 @@ public class GoogleAnalyticsDataController {
     private final GoogleAnalyticsDataService service;
 
     @RequestMapping(value = "/ND_ga4Visitor.do")
-    public void ga4DataAjaxCall(GoogleAnalytics4Vo ga4Vo, Model model) {
+    public String ga4DataAjaxCall(GoogleAnalytics4Vo ga4Vo, Model model) {
         ga4Vo.setTodayVisitors(service.ga4CacheToday());
         ga4Vo.setAllVisitors(service.ga4CacheAll());
         model.addAttribute("ga4Vo", ga4Vo);
+        return "visitorShow";
     }
 
 }

@@ -1,28 +1,30 @@
 package com.example.ga4.restTemplate.spring5.config;
 
-import com.google.gson.Gson;
-import org.springframework.boot.web.client.RestTemplateBuilder;
+
+import org.ehcache.CacheManager;
+import org.ehcache.config.builders.CacheConfigurationBuilder;
+import org.ehcache.config.builders.CacheManagerBuilder;
+import org.ehcache.config.builders.ExpiryPolicyBuilder;
+import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 
-import java.time.Duration;
-
-@Configuration("GACacheConfig2")
+@Configuration("GoogleAnalyticsCacheConfig2")
 public class GACacheConfig {
 
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) { // RestTemplateBuilder :  spring5 & SpringBoot 1.4 이상
-        return builder
-                .setConnectTimeout(Duration.ofSeconds(10)) // 연결 타임아웃 10초로 설정
-                .setReadTimeout(Duration.ofSeconds(10)) // 읽기 타임아웃 10초로 설정
-                .build();
-    }
-
-
-    @Bean
-    public Gson gson() {
-        return new Gson();
+    @Qualifier("ehCacheManager2")
+    @Bean("CacheManager2")
+    public CacheManager ehCacheManager2() {
+        CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder()
+                .withCache("visitorCounts",     // "visitorCounts" 키명으로 캐시 생성
+                        CacheConfigurationBuilder.newCacheConfigurationBuilder(
+                                        String.class, String.class,     // 캐시 키와 밸류값의 타입 설정
+                                        ResourcePoolsBuilder.heap(10))  // 힙에 최대 10개의 항목을 저장
+                                .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(java.time.Duration.ofMinutes(2))) // TTL(Time to Live) 설정 옵션
+                ).build();
+        cacheManager.init(); // 초기화 콜백
+        return cacheManager;
     }
 
 

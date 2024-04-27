@@ -14,19 +14,13 @@
             $(document).ready(function() {
                 $.ajax({
                     url: "/oauth2/ga4",
-                    // url: '/protoType/oauth2',
                     type: "POST",
                     dataType: "json",
                     contentType: "application/json",
-                    // data: {
-                    //   "accessToken" : accessToken
-                    // },
-                    data: accessToken,
                     success: function(data) {
                         console.log(data);
-/*
                         $('#todayVisitors').text(data.todayVisitors);
-                        $('#allVisitors').text(data.allVisitors);*/
+                        $('#allVisitors').text(data.allVisitors);
                     },
                     error: function(xhr, status, error) {
                         console.log('Error:', error);

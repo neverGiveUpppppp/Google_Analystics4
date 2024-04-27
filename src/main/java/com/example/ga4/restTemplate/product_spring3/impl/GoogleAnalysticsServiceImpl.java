@@ -34,7 +34,7 @@ public class GoogleAnalysticsServiceImpl implements GoogleAnalysticsService {
     @Qualifier("ehCacheManager")
     private final CacheManager cacheManager;
 
-    public GoogleAnalysticsServiceImpl(RestTemplate restTemplate, GoogleOauthProperties oauthProps, Gson gson, @Qualifier("ehCacheManager") CacheManager cacheManager) {
+    public GoogleAnalysticsServiceImpl(@Qualifier("restTemplate1") RestTemplate restTemplate, GoogleOauthProperties oauthProps, Gson gson, @Qualifier("ehCacheManager") CacheManager cacheManager) {
         this.restTemplate = restTemplate;
         this.oauthProps = oauthProps;
         this.gson = gson;
